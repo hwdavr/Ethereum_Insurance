@@ -49,11 +49,13 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.props.count}</Text>
+        <View style={styles.textContainer}>
+          <Text style={styles.counterText}>{this.props.count}</Text>
+        </View>
         <Button
+          style={styles.resetButton}
           onPress={this._resetCounter}
           title="Reset"
-          color="#000"
         />
       </View>
     );
@@ -65,5 +67,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  textContainer: {
+    margin: 50,
+    alignSelf: 'center',
+    backgroundColor: '#fff',
+  },
+  counterText: {
+    fontSize: 28
+  },
+  resetButton: {
+    padding: 8,
+    color: 'dodgerblue',
+    fontSize: 18,
+    backgroundColor: '#555555'
   },
 });
