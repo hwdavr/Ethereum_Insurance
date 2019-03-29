@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TouchableHighlight,
   View,
   Button
 } from 'react-native';
@@ -52,11 +53,11 @@ export default class HomeScreen extends React.Component {
         <View style={styles.textContainer}>
           <Text style={styles.counterText}>{this.props.count}</Text>
         </View>
-        <Button
+        <TouchableHighlight
           style={styles.resetButton}
-          onPress={this._resetCounter}
-          title="Reset"
-        />
+          onPress={this._resetCounter} >
+          <Text style={styles.buttonText}>Reset</Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -66,20 +67,27 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#eeeeee',
   },
   textContainer: {
     margin: 50,
     alignSelf: 'center',
-    backgroundColor: '#fff',
   },
   counterText: {
     fontSize: 28
   },
   resetButton: {
+    marginLeft: 8,
+    marginRight: 8,
     padding: 8,
-    color: 'dodgerblue',
-    fontSize: 18,
-    backgroundColor: '#555555'
+    backgroundColor: 'dodgerblue',
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff'
   },
+  buttonText: {
+    color:'#fff',
+    fontSize:18, 
+    textAlign:'center',
+  }
 });
